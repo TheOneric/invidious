@@ -38,6 +38,7 @@ var watched_data = {
                                         <input type="hidden" name="csrf_token" value="<%= URI.encode_www_form(env.get?("csrf_token").try &.as(String) || "") %>">
                                         <p class="watched">
                                             <a onclick="mark_unwatched(this)" data-id="<%= item %>" href="javascript:void(0)">
+                                            <!-- What is the purpose of this javascript:void(0) -->
                                                 <button type="submit" style="all:unset">
                                                     <i class="icon ion-md-trash"></i>
                                                 </button>

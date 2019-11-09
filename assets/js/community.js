@@ -71,10 +71,10 @@ function get_youtube_replies(target, load_more) {
                     body.removeChild(body.lastElementChild);
 
                     var p = document.createElement('p');
-                    var a = document.createElement('a');
+                    var a = document.createElement('button');
                     p.appendChild(a);
 
-                    a.href = 'javascript:void(0)';
+                    a.classList.add("as-text");
                     a.onclick = hide_youtube_replies;
                     a.setAttribute('data-sub-text', community_data.hide_replies_text);
                     a.setAttribute('data-inner-text', community_data.show_replies_text);

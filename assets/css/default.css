@@ -98,6 +98,18 @@ a.pure-button-primary:hover {
   color: #fff;
 }
 
+button.as-text {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+}
+
+button.as-text:hover {
+  color: rgba(0, 182, 240, 1);
+}
+
 div.thumbnail {
   padding: 28.125%;
   position: relative;

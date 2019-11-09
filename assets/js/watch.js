@@ -231,14 +231,14 @@ function get_reddit_comments(retries) {
                 comments.innerHTML = ' \
                 <div> \
                     <h3> \
-                        <a href="javascript:void(0)">[ - ]</a> \
+                        <button class="as-text">[ - ]</button> \
                         {title} \
                     </h3> \
                     <p> \
                         <b> \
-                            <a href="javascript:void(0)" data-comments="youtube"> \
+                            <button class="as-text" data-comments="youtube"> \
                                 {youtubeCommentsText} \
-                            </a> \
+                            </button> \
                         </b> \
                     </p> \
                     <b> \
@@ -309,13 +309,13 @@ function get_youtube_comments(retries) {
                 comments.innerHTML = ' \
                 <div> \
                     <h3> \
-                        <a href="javascript:void(0)">[ - ]</a> \
+                        <button class="as-text">[ - ]</button> \
                         {commentsText}  \
                     </h3> \
                     <b> \
-                        <a href="javascript:void(0)" data-comments="reddit"> \
+                        <button class="as-text" data-comments="reddit"> \
                             {redditComments} \
-                        </a> \
+                        </button> \
                     </b> \
                 </div> \
                 <div>{contentHtml}</div> \
@@ -385,10 +385,10 @@ function get_youtube_replies(target, load_more) {
                     body.removeChild(body.lastElementChild);
 
                     var p = document.createElement('p');
-                    var a = document.createElement('a');
+                    var a = document.createElement('button');
                     p.appendChild(a);
 
-                    a.href = 'javascript:void(0)';
+                    a.classList.add("as-text");
                     a.onclick = hide_youtube_replies;
                     a.setAttribute('data-sub-text', video_data.hide_replies_text);
                     a.setAttribute('data-inner-text', video_data.show_replies_text);

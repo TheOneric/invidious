@@ -293,8 +293,8 @@ def template_youtube_comments(comments, locale, thin_mode)
           <div class="pure-u-1-24"></div>
           <div class="pure-u-23-24">
             <p>
-              <a href="javascript:void(0)" data-continuation="#{child["replies"]["continuation"]}"
-                onclick="get_youtube_replies(this)">#{translate(locale, "View `x` replies", number_with_separator(child["replies"]["replyCount"]))}</a>
+              <button class="as-text" data-continuation="#{child["replies"]["continuation"]}"
+                onclick="get_youtube_replies(this)">#{translate(locale, "View `x` replies", number_with_separator(child["replies"]["replyCount"]))}</button>
             </p>
           </div>
         </div>
@@ -412,8 +412,8 @@ def template_youtube_comments(comments, locale, thin_mode)
       <div class="pure-g">
         <div class="pure-u-1">
           <p>
-            <a href="javascript:void(0)" data-continuation="#{comments["continuation"]}"
-              onclick="get_youtube_replies(this, true)">#{translate(locale, "Load more")}</a>
+            <button class="as-text" data-continuation="#{comments["continuation"]}"
+              onclick="get_youtube_replies(this, true)">#{translate(locale, "Load more")}</button>
           </p>
         </div>
       </div>
@@ -451,7 +451,7 @@ def template_reddit_comments(root, locale)
 
         html << <<-END_HTML
         <p>
-          <a href="javascript:void(0)" onclick="toggle_parent(this)">[ - ]</a>
+          <button class="as-text" onclick="toggle_parent(this)">[ - ]</button>
           <b><a href="https://www.reddit.com/user/#{child.author}">#{child.author}</a></b>
           #{translate(locale, "`x` points", number_with_separator(child.score))}
           <span title="#{child.created_utc.to_s(translate(locale, "%a %B %-d %T %Y UTC"))}">#{translate(locale, "`x` ago", recode_date(child.created_utc, locale))}</span>
@@ -490,6 +490,7 @@ def replace_links(html)
       end
 
       anchor["href"] = "javascript:void(0)"
+      # What is the purpose of the above javascript:void(0) ?
       anchor["onclick"] = "player.currentTime(#{length_seconds})"
     end
   end
@@ -556,7 +557,7 @@ def content_to_comment_html(content)
         video_id = watch_endpoint["videoId"].as_s
 
         if length_seconds
-          text = %(<a href="javascript:void(0)" onclick="player.currentTime(#{length_seconds})">#{text}</a>)
+          text = %(<button class="as-text" onclick="player.currentTime(#{length_seconds})">#{text}</button>)
         else
           text = %(<a href="/watch?v=#{video_id}">#{text}</a>)
         end

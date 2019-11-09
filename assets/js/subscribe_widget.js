@@ -1,5 +1,6 @@
 var subscribe_button = document.getElementById('subscribe');
 subscribe_button.parentNode['action'] = 'javascript:void(0)';
+//What is the purpose of the above javascript:void(0) ?
 
 if (subscribe_button.getAttribute('data-type') === 'subscribe') {
     subscribe_button.onclick = subscribe;

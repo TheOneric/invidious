@@ -1,5 +1,5 @@
 var toggle_theme = document.getElementById('toggle_theme');
-toggle_theme.href = 'javascript:void(0);';
+delete toggle_theme.href;
 
 toggle_theme.addEventListener('click', function () {
     var dark_mode = document.getElementById('dark_theme').media === 'none';

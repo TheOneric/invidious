@@ -61,6 +61,7 @@
                                 <input type="hidden" name="csrf_token" value="<%= URI.encode_www_form(env.get?("csrf_token").try &.as(String) || "") %>">
                                 <p class="watched">
                                     <a onclick="remove_playlist_item(this)" data-index="<%= item.index %>" data-plid="<%= plid %>" href="javascript:void(0)">
+                                    <!-- What is the purpose of this javascript:void(0) -->
                                         <button type="submit" style="all:unset">
                                             <i class="icon ion-md-trash"></i>
                                         </button>
@@ -107,6 +108,7 @@
                                 <input type="hidden" name="csrf_token" value="<%= URI.encode_www_form(env.get?("csrf_token").try &.as(String) || "") %>">
                                 <p class="watched">
                                     <a onclick="mark_watched(this)" data-id="<%= item.id %>" href="javascript:void(0)">
+                                    <!-- What is the purpose of this javascript:void(0) -->
                                         <button type="submit" style="all:unset">
                                             <i onmouseenter='this.setAttribute("class", "icon ion-ios-eye-off")'
                                                 onmouseleave='this.setAttribute("class", "icon ion-ios-eye")'
@@ -121,6 +123,7 @@
                                 <input type="hidden" name="csrf_token" value="<%= URI.encode_www_form(env.get?("csrf_token").try &.as(String) || "") %>">
                                 <p class="watched">
                                     <a onclick="add_playlist_item(this)" data-id="<%= item.id %>" data-plid="<%= plid %>" href="javascript:void(0)">
+                                    <!-- What is the purpose of this javascript:void(0) -->
                                         <button type="submit" style="all:unset">
                                             <i class="icon ion-md-add"></i>
                                         </button>
